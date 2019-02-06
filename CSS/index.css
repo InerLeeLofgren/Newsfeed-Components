@@ -65,7 +65,7 @@
   display: block;
 }
 .articles {
-  margin-top: 95px;
+  margin-top: 50px;
 }
 .article {
   margin: 20px 10%;
@@ -104,6 +104,39 @@
 }
 .article-open {
   height: 400px;
+}
+.newArticle {
+  display: flex;
+  justify-content: center;
+}
+.newArticle .newArticleForm {
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 2px 2px 2px lightgrey;
+  margin-top: 95px;
+  width: 50%;
+}
+.newArticle .newArticleForm h2 {
+  margin: 5px 10%;
+  width: 40%;
+  border-radius: 5px;
+}
+.newArticle .newArticleForm input {
+  margin: 5px 10%;
+  width: 40%;
+  border-radius: 5px;
+}
+.newArticle .newArticleForm textarea {
+  margin: 5px 5%;
+  border-radius: 5px;
+  resize: none;
+}
+.newArticle .newArticleForm button {
+  border-radius: 10px;
+  width: 50%;
+  align-self: center;
 }
 html,
 body {
