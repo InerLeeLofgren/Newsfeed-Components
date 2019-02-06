@@ -46,7 +46,7 @@ formSubmit.addEventListener('click', event => {
 
     newArticle.querySelector('input').value = ''
     newArticle.querySelector('textarea').value = ''
+
+    articleDiv = new Article(articleDiv)
 })
 
-
-//new Date()
