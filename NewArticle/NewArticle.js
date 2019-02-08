@@ -12,12 +12,9 @@ formSubmit.addEventListener('click', event => {
     const title = newArticle.querySelector('input').value
     //grab the content for the new article
     const articleBody = newArticle.querySelector('textarea').value
-
-    //check if content is empty and alert if it is
-    title.length < 1 || articleBody.length < 1 ? alert('Please enter info') : console.log('posting article')
     
     //create the div element and child elements
-    const articleDiv = document.createElement('div')
+    let articleDiv = document.createElement('div')
     const newTitle = document.createElement('h2')
     const newDate = document.createElement('p')
     const newContent = document.createElement('p')
@@ -34,19 +31,26 @@ formSubmit.addEventListener('click', event => {
     articleDiv.classList.add('article')
     newButton.classList.add('expandButton')
 
-    //construct the new Article
-    articleDiv.appendChild(newTitle)
-    articleDiv.appendChild(newDate)
-    articleDiv.appendChild(newContent)
-    articleDiv.appendChild(newButton)
-
-    //place the new article in the articles div
-    const articlesHook = document.querySelector('.articles')
-    articlesHook.prepend(articleDiv)
-
     newArticle.querySelector('input').value = ''
     newArticle.querySelector('textarea').value = ''
 
-    articleDiv = new Article(articleDiv)
+    //check if input was empty and does not post if it is empty
+    if(title.length < 1 || articleBody.length < 1 ){
+        alert('Please enter info')
+        console.log(`${title.length} : ${articleBody.length}`)
+    }else{
+        //place the new article in the articles div
+        const articlesHook = document.querySelector('.articles')
+        articlesHook.prepend(articleDiv)
+
+        //construct the new Article
+        articleDiv.appendChild(newTitle)
+        articleDiv.appendChild(newDate)
+        articleDiv.appendChild(newContent)
+        articleDiv.appendChild(newButton)
+        //Apply new article to Article Class
+        articleDiv = new Article(articleDiv)
+    }
+
 })
 
